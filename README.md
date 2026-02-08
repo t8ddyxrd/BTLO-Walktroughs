@@ -1,3 +1,5 @@
+
+Day: 1/30
 This repository contains walkthroughs of Blue Team Labs Online (BTLO) labs,
 documenting practical defensive security investigations including network analysis,
 endpoint investigation, misconfigurations, and incident response techniques.
