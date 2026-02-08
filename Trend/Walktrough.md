@@ -29,7 +29,7 @@ After identifying the router IP, HTTP responses from the web management interfac
 Pages served by the router exposed device metadata, including model and firmware version information, which is typical for embedded web interfaces.
 
 **Answer:**  
-Trend router – model and firmware details disclosed via the HTTP management interface.
+TEW-652BRU_1.0b02
 
 **Evidence:**  
 <img width="1034" height="684" alt="device-model-details" src="https://github.com/user-attachments/assets/1fa79866-1008-46d6-bf53-4f6ecbdbb9e8" />  
@@ -209,3 +209,4 @@ The attacker modified cron configuration to ensure execution on reboot.
 <img width="1044" height="828" alt="cron-persistence-reboot" src="https://github.com/user-attachments/assets/522245cd-c51a-4f38-9a78-aa44fbce7dd9" />
 
 ---
+
