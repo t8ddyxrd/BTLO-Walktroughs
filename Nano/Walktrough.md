@@ -8,7 +8,7 @@ This document walks through the investigation **in the exact order of the questi
 
 ---
 
-## Q1️⃣ Attacker C2 Server IP & Connection Count
+## 1️⃣ Attacker C2 Server IP & Connection Count
 
 **Question:**
 Looking at the RITA HTML Report (**Log_2V**), what is the IP of the attacker’s C2 server? Provide the number of connections as well.
@@ -43,7 +43,7 @@ The destination IP is the attacker’s C2 server.
 
 ---
 
-## Q2️⃣ Cloud Infrastructure Hosting the C2
+## 2️⃣ Cloud Infrastructure Hosting the C2
 
 **Question:**
 What cloud infrastructure is being used for the C2 server?
@@ -76,7 +76,7 @@ DigitalOcean
 
 ---
 
-## Q3️⃣ User Agent Corresponding to the C2 Traffic
+## 3️⃣ User Agent Corresponding to the C2 Traffic
 
 **Question:**
 Looking at the RITA **User Agents** report, what system corresponds to the connection count in Q1?
@@ -109,7 +109,7 @@ Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)
 
 ---
 
-## Q4️⃣ Low‑Profile Subdomain with Abnormal DNS Volume
+## 4️⃣ Low‑Profile Subdomain with Abnormal DNS Volume
 
 **Question:**
 In **Log_1D**, what is the low-profile subdomain with an absurd amount of requests?
@@ -143,7 +143,7 @@ cat.nanobotninjas.com, 82920
 
 ---
 
-## Q5️⃣ Private IP Generating DNS TXT Requests
+## 5️⃣ Private IP Generating DNS TXT Requests
 
 **Question:**
 In the **Zeek logs (Log_1D)**, which private IP is responsible for the DNS TXT requests?
@@ -182,7 +182,7 @@ This internal host is performing DNS tunneling activity.
 
 ---
 
-## Q6️⃣ Numerical System Used in DNS Subdomain Values
+## 6️⃣ Numerical System Used in DNS Subdomain Values
 
 **Question:**
 What numerical system is being used for the changing value prepended to the subdomain?
@@ -217,7 +217,7 @@ Base16
 
 ---
 
-## Q7️⃣ Tool Used for C2 over DNS
+## 7️⃣ Tool Used for C2 over DNS
 
 **Question:**
 Judging from the logs, what tool was the attacker using to channel C2 over DNS?
@@ -262,3 +262,4 @@ This mirrors **real SOC investigations**, where analysts pivot between high-leve
 ---
 
 ✅ **All questions successfully solved**
+
