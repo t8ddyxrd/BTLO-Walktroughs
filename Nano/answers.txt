@@ -1,0 +1,7 @@
+q1:138.197.117.74,8440
+q2:DigitalOcean
+q3:Mozilla/5.0 (compatible; MSIE9 9.0; Windows NT 6.1; Trident/5.0
+q4:cat.nanobotninjas.com,82920
+q5:10.234.234.105
+q6:Hecadecimal
+q7:dnscat
