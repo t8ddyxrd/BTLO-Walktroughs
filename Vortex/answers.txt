@@ -1,0 +1,12 @@
+q1:22:51:00.220437
+q2:192.168.1.27
+q3:bc:ea:fa:22:74:fb, Hewlett Packard
+q4:DESKTOP-WIN11PC
+q5:admin@windows11users.com
+q6:zaritkt@arhitektkondizajn.com
+q7:Intel(R) Core(TM) i5-13600K CPU @ 5.10GHz
+Q8:32GB
+q9:Username, Password
+q10:admin@windows11users.com, 3F076#TF4P$Im!9mkLs069eTk
+q11:
+q12:M@ssw0rd#621
