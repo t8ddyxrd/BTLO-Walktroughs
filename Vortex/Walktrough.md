@@ -21,7 +21,7 @@ What time did the suspected user system/browser connect to the malicious website
 * Switched the time format to **Date and Time of Day**
 * Extracted the timestamp from the earliest relevant packet
 
-📸 *Screenshot:* `<img width="1417" height="110" alt="q1 and 2" src="https://github.com/user-attachments/assets/d4f3fbd2-73be-4135-9575-4ca5df786ddf" />`
+📸 *Screenshot:* `<img width="1417" height="110" alt="q1 and 2" src="https://github.com/user-attachments/assets/d4f3fbd2-73be-4135-9575-4ca5df786ddf" />
 
 
 
@@ -42,7 +42,7 @@ What is Briana’s IP address?
 * Used the same packet identified in Question 1
 * Extracted the **source IP address** from the packet details
 
-📸 *Screenshot:* `<img width="1417" height="110" alt="q1 and 2" src="https://github.com/user-attachments/assets/63368cdb-2d82-45b5-900d-30188f4f41ef" />`
+📸 *Screenshot:* `<img width="1417" height="110" alt="q1 and 2" src="https://github.com/user-attachments/assets/63368cdb-2d82-45b5-900d-30188f4f41ef" />
 
 
 ### ✅ Conclusion
@@ -65,7 +65,7 @@ What is Briana’s MAC/Ethernet address? What is the vendor name for the MAC add
 * 
 
 
-📸 *Screenshot:* `<img width="1235" height="234" alt="q3" src="https://github.com/user-attachments/assets/42d551de-6adb-4a1c-b278-a11d212079ba" />`
+📸 *Screenshot:* `<img width="1235" height="234" alt="q3" src="https://github.com/user-attachments/assets/42d551de-6adb-4a1c-b278-a11d212079ba" />
 
 ### ✅ Conclusion
 
@@ -84,7 +84,7 @@ What is Briana’s Windows machine name?
 * Inspected outbound messages and metadata
 * Extracted the hostname from **EHLO** and email subject fields
 
-📸 *Screenshot:* `<img width="1529" height="127" alt="q4" src="https://github.com/user-attachments/assets/12ac615b-00b8-4c6d-8961-d904a1bba270" />`
+📸 *Screenshot:* `<img width="1529" height="127" alt="q4" src="https://github.com/user-attachments/assets/12ac615b-00b8-4c6d-8961-d904a1bba270" />
 
 
 ### ✅ Conclusion
@@ -104,7 +104,7 @@ What is Briana’s Windows username?
 * Identified malware-exfiltrated credential information
 * Extracted the Windows username value
 
-📸 *Screenshot:* `<img width="842" height="137" alt="q7 5 and 8" src="https://github.com/user-attachments/assets/93d649c6-77b6-48b2-984d-645110c1c095" />`
+📸 *Screenshot:* `<img width="842" height="137" alt="q7 5 and 8" src="https://github.com/user-attachments/assets/93d649c6-77b6-48b2-984d-645110c1c095" />
 
 
 ### ✅ Conclusion
@@ -123,7 +123,7 @@ What email address was the attacker sending data to?
 * Inspected SMTP **RCPT TO** fields
 * Identified the external destination inbox used to receive stolen data
 
-📸 *Screenshot:* `<img width="1307" height="40" alt="q6" src="https://github.com/user-attachments/assets/ed9516a8-aef2-45b8-9dcc-0c0db045c0bf" />`
+📸 *Screenshot:* `<img width="1307" height="40" alt="q6" src="https://github.com/user-attachments/assets/ed9516a8-aef2-45b8-9dcc-0c0db045c0bf" />
 
 
 ### ✅ Conclusion
@@ -142,7 +142,7 @@ What type of CPU does Briana’s computer use?
 * Examined system information embedded in SMTP exfiltrated data
 * Extracted the CPU field
 
-📸 *Screenshot:* `<img width="842" height="137" alt="q7 5 and 8" src="https://github.com/user-attachments/assets/8d2b9ca7-3236-470c-a0d4-995a91a790dd" />`
+📸 *Screenshot:* `<img width="842" height="137" alt="q7 5 and 8" src="https://github.com/user-attachments/assets/8d2b9ca7-3236-470c-a0d4-995a91a790dd" />
 
 
 ### ✅ Conclusion
@@ -162,7 +162,7 @@ How much RAM does Briana’s computer have?
 * Extracted RAM information from system metadata
 * Converted the reported value into gigabytes
 
-📸 *Screenshot:* `<img width="842" height="137" alt="q7 5 and 8" src="https://github.com/user-attachments/assets/55a48f6b-f096-4260-8e02-6e9e7223c0cd" />`
+📸 *Screenshot:* `<img width="842" height="137" alt="q7 5 and 8" src="https://github.com/user-attachments/assets/55a48f6b-f096-4260-8e02-6e9e7223c0cd" />
 
 
 ### ✅ Conclusion
@@ -181,7 +181,7 @@ What type of account login data was stolen by the attacker?
 * Reviewed SMTP exfiltration payloads
 * Observed repeated credential fields across multiple services
 
-📸 *Screenshot:* `<img width="806" height="155" alt="q9" src="https://github.com/user-attachments/assets/74988f0b-68a5-464b-be6b-6a82babbfb6c" />`
+📸 *Screenshot:* `<img width="806" height="155" alt="q9" src="https://github.com/user-attachments/assets/74988f0b-68a5-464b-be6b-6a82babbfb6c" />
 
 
 ### ✅ Conclusion
@@ -201,7 +201,7 @@ What are the username and password related to the Amazon account?
 * Extracted the explicitly listed username and password
 
 
-📸 *Screenshot:* `<img width="640" height="461" alt="q10" src="https://github.com/user-attachments/assets/1c9a0c88-4d5f-4879-a734-6e9642f0cb11" />`
+📸 *Screenshot:* `<img width="640" height="461" alt="q10" src="https://github.com/user-attachments/assets/1c9a0c88-4d5f-4879-a734-6e9642f0cb11" />
 
 
 ### ✅ Conclusion
@@ -221,7 +221,7 @@ What username did Briana use to authenticate to webhostbox[.]net?
 * Identified the Base64-encoded username
 * Decoded the value using CyberChef
 
-📸 *Screenshot:* `<img width="959" height="897" alt="q11" src="https://github.com/user-attachments/assets/a2831109-76b6-4112-8069-79e978597f20" />`
+📸 *Screenshot:* `<img width="959" height="897" alt="q11" src="https://github.com/user-attachments/assets/a2831109-76b6-4112-8069-79e978597f20" />
 
 
 ### ✅ Conclusion
@@ -241,7 +241,7 @@ What password did Briana use to authenticate to webhostbox[.]net?
 * Continued analysis of the same SMTP AUTH LOGIN TCP stream
 * Identified the password token used during authentication
 
-📸 *Screenshot:* `<img width="965" height="886" alt="q12" src="https://github.com/user-attachments/assets/9bb3c07c-c0c2-4b65-aa06-f9455e40bd1d" />`
+📸 *Screenshot:* `<img width="965" height="886" alt="q12" src="https://github.com/user-attachments/assets/9bb3c07c-c0c2-4b65-aa06-f9455e40bd1d" />
 
 
 ### ✅ Conclusion
@@ -265,3 +265,4 @@ The findings were derived directly from packet evidence using repeatable forensi
 ---
 
 ✅ **All questions successfully solved**
+
