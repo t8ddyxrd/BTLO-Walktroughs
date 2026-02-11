@@ -3,6 +3,7 @@
 > **Platform:** Blue Team Labs Online (BTLO)  
 > **Investigation Dataset:** FunGames  
 > **Tools Used:** Wireshark, CyberChef, Linux CLI  
+> **Attack Chain Summary:** The attacker exploited a SQL Injection vulnerability in the FunGames web application to extract database credentials. These credentials were reused to gain SSH access to the server. A malicious binary was then transferred to escalate privileges to root, after which sensitive data was exfiltrated covertly via DNS traffic.
 
 This document walks through the investigation **in the exact order of the questions**, explaining *what was found, why it matters, and how the conclusion was reached*. Screenshots are referenced where applicable.
 
@@ -279,5 +280,6 @@ The findings were derived directly from packet evidence using repeatable forensi
 ---
 
 ✅ **All questions successfully solved**
+
 
 
