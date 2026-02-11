@@ -104,9 +104,22 @@ In one of the packets, it is possible to view the victim's username and password
 
 ### 🔍 Methodology
 
-* Followed the HTTP stream for the SQL injection requests
-* Observed database output embedded inside the server response
-* Identified the extracted `username` and `password` fields
+* Followed the HTTP stream associated with the SQL injection requests targeting the FunGames application
+
+*Identified a server response containing raw database output returned as part of the vulnerable query
+
+*Observed that the response body was not clearly readable within the default Wireshark packet view
+
+*Exported the HTTP response data to a file for further analysis
+
+*Opened the extracted response file in Mozilla Firefox to properly render the content
+
+*Reviewed the rendered page and located the exposed database fields
+
+*Extracted the cleartext username and password values from the displayed output
+
+
+
 
 📸 *Screenshot:* <img width="1920" height="791" alt="q5" src="https://github.com/user-attachments/assets/49796026-7b8b-4bb1-bdbe-7cc2cb4f0a27" />
 
@@ -266,3 +279,4 @@ The findings were derived directly from packet evidence using repeatable forensi
 ---
 
 ✅ **All questions successfully solved**
+
