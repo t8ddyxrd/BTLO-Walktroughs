@@ -72,7 +72,9 @@ Get-FileHash omgsoft.exe
 The hash was then submitted to VirusTotal for reputation analysis.
 
 ### 📸 Evidence
-*PowerShell hash output* (see screenshot Q1)
+*PowerShell hash output* 
+<img width="627" height="540" alt="q1" src="https://github.com/user-attachments/assets/d690f018-f453-4ac9-935e-208b09be308f" />
+
 
 ### ✅ Answer
 ```
@@ -109,7 +111,9 @@ What is the true infection name of `omgsoft.exe`?
 VirusTotal analysis showed a high detection ratio with strong vendor consensus.
 
 ### 📸 Evidence
-*VirusTotal detection page* (see screenshot Q2)
+*VirusTotal detection page* 
+<img width="1730" height="720" alt="q2" src="https://github.com/user-attachments/assets/b35e98bf-21d7-4033-8231-3e5b7286c7d6" />
+
 
 ### ✅ Answer
 ```
@@ -148,7 +152,8 @@ Get-AuthenticodeSignature .\neuro.msi
 ```
 
 ### 📸 Evidence
-*Authenticode signature output* (see screenshot Q3)
+*Authenticode signature output* 
+<img width="1160" height="800" alt="q3" src="https://github.com/user-attachments/assets/f6432fc2-aeb4-4bd9-958f-6af648c6eab8" />
 
 ### ✅ Answer
 ```
@@ -192,7 +197,11 @@ net localgroup administrators
 Comparing system state **before and after execution** revealed a newly created administrative user.
 
 ### 📸 Evidence
-*User & group enumeration* (see screenshot Q4)
+*User & group enumeration* 
+<img width="1157" height="800" alt="q4 part 1" src="https://github.com/user-attachments/assets/95df0de2-1e38-4fcd-9271-fa93dd9e43e2" />
+<img width="1155" height="800" alt="q4 part 2" src="https://github.com/user-attachments/assets/75f499ed-f30d-4241-98a5-895f98c10808" />
+
+
 
 ### ✅ Answer
 ```
@@ -258,7 +267,9 @@ Get-ScheduledTask | Select TaskName, TaskPath
 Suspicious tasks were isolated by identifying **non-standard names** and **logon triggers**.
 
 ### 📸 Evidence
-*Scheduled task enumeration* (see screenshot Q5)
+*Scheduled task enumeration* 
+<img width="523" height="370" alt="q5" src="https://github.com/user-attachments/assets/21b1df7b-75cf-4ce0-b363-52e125fc0238" />
+
 
 ### ✅ Answer
 ```
@@ -299,7 +310,9 @@ Get-ScheduledTask -TaskName "LogonProcessDump" | Select -ExpandProperty Actions
 This revealed a **hidden PowerShell execution** designed to collect process information.
 
 ### 📸 Evidence
-*Task action inspection* (see screenshot Q6)
+*Task action inspection* 
+<img width="1187" height="800" alt="q6" src="https://github.com/user-attachments/assets/5bea0e53-fbbb-4b48-bf02-060139aa6194" />
+
 
 ### ✅ Answer
 ```powershell
@@ -343,7 +356,8 @@ Get-ItemProperty "HKLM:\Software\Microsoft\Windows\CurrentVersion\Run"
 The attacker configured a Run key entry pointing to a trusted binary to evade suspicion.
 
 ### 📸 Evidence
-*Registry Run key output* (see screenshot Q7)
+*Registry Run key output* 
+![q7](https://github.com/user-attachments/assets/9bcc8c27-51df-4dfc-859e-193aef4c0dd1)
 
 ### ✅ Answer
 ```
