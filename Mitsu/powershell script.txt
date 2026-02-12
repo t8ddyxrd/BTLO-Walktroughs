@@ -1,0 +1,12 @@
+Get-ScheduledTask | ForEach-Object {
+    $task = $_
+    $actions = $task.Actions | Where-Object {$_.Execute}
+    if ($actions) {
+        [PSCustomObject]@{
+            TaskName = $task.TaskName
+            TaskPath = $task.TaskPath
+            Execute  = $actions.Execute
+            Arguments = $actions.Arguments
+        }
+    }
+} | Format-Table -AutoSize

@@ -1,0 +1,7 @@
+q1: E60D911F2EF120ED782449F1136C23DDF0C1C81F7479C5CE31ED6DCEA6F6ADF9
+q2:LummaStealer
+q3:NotSigned
+q4:testuser,Administrators
+q5:LogonProcessDump
+q6:powershell.exe -NoProfile -WindowStyle Hidden -Command "Get-Process | Out-File C:\processes.txt"
+q7:C:\Windows\System32\notepad.exe
