@@ -23,7 +23,7 @@ Looking into it further, what is the true file type of this image?
 The Linux `file` utility was used to inspect the actual file type rather than relying on the file extension.
 
 ```bash```
-``````<img width="763" height="318" alt="q1" src="https://github.com/user-attachments/assets/f14ac980-fb01-4983-b474-8ac75a7375a8" />``````````
+`<img width="763" height="318" alt="q1" src="https://github.com/user-attachments/assets/f14ac980-fb01-4983-b474-8ac75a7375a8" />``
 
 
 
@@ -33,6 +33,7 @@ Despite the .png extension, the file is identified as a PDF document (version 1.
 
 ### ✅ Answer
 PDF
+
 
 
 
