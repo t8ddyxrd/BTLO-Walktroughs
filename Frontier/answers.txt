@@ -1,0 +1,4 @@
+q1:PDF
+q2:hxxp[:]//hosting2022private[.]duckdns[.]org/eubp/example[.]zip, hxxps[:]//stcdanismalik[.]com/Update/UpdatePDF[.]exe, hxxps[:]//stcdanismalik[.]com/Update/UpdatePDF[.]zip
+q3:https://www.enclavenet.com/image
+q4:https://www1-secure-vpn.com/collect
