@@ -68,7 +68,7 @@ The file may not be a genuine image and could be masquerading as another file ty
 
 ### 📸 Evidence  
 ![Q1]<img width="763" height="318" alt="q1" src="https://github.com/user-attachments/assets/d8451254-3620-498f-9ad7-517247da9ac4" />
-<img width="763" height="318" alt="q1" src="https://github.com/user-attachments/assets/d8451254-3620-498f-9ad7-517247da9ac4" />
+
 
 
 ### ✅ Answer
@@ -110,7 +110,7 @@ strings "RobCo Image.pdf" | grep -Eo 'https?://[^ ]+'
 
 ### 📸 Evidence  
 ![Q2]<img width="1899" height="783" alt="q2" src="https://github.com/user-attachments/assets/ebe05a2b-cee7-43c0-a3ad-f1013078d6f9" />
-<img width="1899" height="783" alt="q2" src="https://github.com/user-attachments/assets/ebe05a2b-cee7-43c0-a3ad-f1013078d6f9" />
+
 
 
 ### ✅ Answer
@@ -153,7 +153,7 @@ grep -i enclave access.log
 
 ### 📸 Evidence  
 ![Q3]<img width="1781" height="253" alt="q3" src="https://github.com/user-attachments/assets/699add3a-88de-490e-9dfc-55e8067aa628" />
-<img width="1781" height="253" alt="q3" src="https://github.com/user-attachments/assets/699add3a-88de-490e-9dfc-55e8067aa628" />
+
 
 
 ### ✅ Answer
@@ -195,7 +195,7 @@ python3 potatu-bot-beacon.py -i 5 -c 10 172.16.42.107 access.log
 
 ### 📸 Evidence  
 ![Q4]<img width="1899" height="735" alt="q4" src="https://github.com/user-attachments/assets/a872a79c-2808-4389-8ccd-c977ca98c6a8" />
-<img width="1899" height="735" alt="q4" src="https://github.com/user-attachments/assets/a872a79c-2808-4389-8ccd-c977ca98c6a8" />
+
 
 
 ### ✅ Answer
@@ -232,7 +232,7 @@ If one host is beaconing to the C2 domain, other compromised hosts may exhibit t
 
 ### 📸 Evidence  
 ![Q5]<img width="660" height="476" alt="q5" src="https://github.com/user-attachments/assets/65cb5baa-fad7-468a-b39d-f660e12110ca" />
-<img width="660" height="476" alt="q5" src="https://github.com/user-attachments/assets/65cb5baa-fad7-468a-b39d-f660e12110ca" />
+
 
 
 
@@ -265,6 +265,7 @@ HV-KNIGHT, HV-DEVLOP, HV-PALADIN, HV-SCRIBE
 This investigation demonstrates a **network-centric compromise** leveraging disguised files and periodic HTTP beaconing to maintain command-and-control access. By correlating file artifacts with network telemetry, multiple compromised hosts were identified, enabling effective scoping and remediation.
 
 All findings were derived through structured analysis and aligned with real-world SOC investigative workflows.
+
 
 
 
