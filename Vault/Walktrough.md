@@ -1,4 +1,4 @@
-# 🛡️ 🛡️ BTLO Investigation Walkthrough-Vault
+# 🛡️  BTLO Investigation Walkthrough-Vault
 
 > **Platform:** Azure / Blue Team Labs Online (BTLO-style)  
 > **Investigation Focus:** Azure Sign-In Logs & Key Vault Diagnostic Logs  
