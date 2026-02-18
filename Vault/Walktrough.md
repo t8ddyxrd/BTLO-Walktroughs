@@ -57,7 +57,9 @@ This methodology reflects modern cloud SOC operations, where activity is often *
 
 
 ### 📸 Evidence
-![Q1](screenshots/q1.png)
+<img width="115" height="297" alt="q1 part 1" src="https://github.com/user-attachments/assets/7a1ebaeb-1167-41ac-8ef6-4d3d5bf65a99" />
+<img width="170" height="296" alt="q1 part 2" src="https://github.com/user-attachments/assets/dae4d7c5-9bc0-4a3c-b000-1fe6b820363d" />
+
 
 ### ✅ Answer
 ```
@@ -73,7 +75,8 @@ Miriam Graham
 
 
 ### 📸 Evidence
-![Q2](screenshots/q2.png)
+<img width="221" height="295" alt="q2" src="https://github.com/user-attachments/assets/a2fa4fcd-d53f-46ef-8829-a3452530847d" />
+
 
 ### ✅ Answer
 ```
@@ -89,7 +92,8 @@ MiriamG@bank.onmicrosoft.com
 
 
 ### 📸 Evidence
-![Q3](screenshots/q3.png)
+<img width="96" height="306" alt="q3" src="https://github.com/user-attachments/assets/353b1639-ffdc-4641-890a-8a3dbacd3933" />
+
 
 ### ✅ Answer
 ```
@@ -105,7 +109,8 @@ Member
 
 
 ### 📸 Evidence
-![Q4](screenshots/q4.png)
+<img width="173" height="290" alt="q4" src="https://github.com/user-attachments/assets/61bb53ec-52eb-4cdc-93e9-fd9e28dca101" />
+
 
 ### ✅ Answer
 ```
@@ -121,7 +126,8 @@ PrimaryRefreshToken
 
 
 ### 📸 Evidence
-![Q5](screenshots/q5.png)
+<img width="168" height="298" alt="q5" src="https://github.com/user-attachments/assets/31903277-bf89-4721-8d86-6dd112494f54" />
+
 
 ### ✅ Answer
 ```
@@ -137,7 +143,8 @@ No
 
 
 ### 📸 Evidence
-![Q6](screenshots/q6.png)
+<img width="280" height="710" alt="q6" src="https://github.com/user-attachments/assets/4df27f49-16f9-4140-bd80-45cc052fedca" />
+
 
 ### ✅ Answer
 ```
@@ -153,7 +160,7 @@ No
 
 
 ### 📸 Evidence
-![Q7](screenshots/q7.png)
+<img width="163" height="721" alt="q7" src="https://github.com/user-attachments/assets/1f36c2c4-2d64-4d35-b0f6-fd852f2b42d3" />
 
 ### ✅ Answer
 ```
@@ -169,7 +176,8 @@ Finance
 
 
 ### 📸 Evidence
-![Q8](screenshots/q8.png)
+<img width="888" height="707" alt="q8" src="https://github.com/user-attachments/assets/2ca0fe62-fe37-403f-a2be-bdf27cc3fcc5" />
+
 
 ### ✅ Answer
 ```
@@ -185,7 +193,8 @@ Finance
  `04b07795-8ddb-461a-bbee-02f9e1bf7b46`
 
 ### 📸 Evidence
-![Q9](screenshots/q9.png)
+<img width="1539" height="812" alt="q9" src="https://github.com/user-attachments/assets/f21c0e17-90f5-4b03-9e34-cd1f9c8879d1" />
+
 
 ### ✅ Answer
 ```
@@ -201,7 +210,8 @@ Finance
 
 
 ### 📸 Evidence
-![Q10](screenshots/q10.png)
+<img width="275" height="194" alt="q10" src="https://github.com/user-attachments/assets/7579914c-e743-4286-8fc0-8d85f511cdff" />
+
 
 ### ✅ Answer
 ```
@@ -217,7 +227,8 @@ Microsoft Azure CLI
 
 
 ### 📸 Evidence
-![Q11](screenshots/q11.png)
+<img width="801" height="633" alt="q11" src="https://github.com/user-attachments/assets/3beb64f2-f722-4323-9ddc-7df73fd9c814" />
+
 
 ### ✅ Answer
 ```
@@ -233,7 +244,8 @@ azsdk-python-keyvault-keys/4.9.0b3 Python/3.11.5 (Windows-10.0.19044-SP0)
 
 
 ### 📸 Evidence
-![Q12](screenshots/q12.png)
+<img width="396" height="637" alt="q12" src="https://github.com/user-attachments/assets/60e11b91-4276-41ed-bde5-afc9a92128da" />
+
 
 ### ✅ Answer
 ```
@@ -249,7 +261,8 @@ SALARY
 
 
 ### 📸 Evidence
-![Q13](screenshots/q13.png)
+<img width="1247" height="704" alt="q13" src="https://github.com/user-attachments/assets/23e9a820-da66-46c4-8069-d288fd530396" />
+
 
 ### ✅ Answer
 ```
@@ -265,7 +278,8 @@ Payroll
 
 
 ### 📸 Evidence
-![Q14](screenshots/q14.png)
+<img width="573" height="73" alt="q14" src="https://github.com/user-attachments/assets/481f6bf4-8c19-4885-acdf-323825a3ec88" />
+
 
 ### ✅ Answer
 ```
@@ -281,7 +295,8 @@ Confidential
  `9c059db6-eb2f-4085-9979-4c94a5b19b0d`
 
 ### 📸 Evidence
-![Q15](screenshots/q15.png)
+<img width="580" height="109" alt="q15" src="https://github.com/user-attachments/assets/23a34c4e-7138-49dc-b7e0-e44aab118395" />
+
 
 ### ✅ Answer
 ```
@@ -297,7 +312,8 @@ KeyList
 
 
 ### 📸 Evidence
-![Q16](screenshots/q16.png)
+<img width="1333" height="342" alt="q16" src="https://github.com/user-attachments/assets/435eaa69-93e9-4817-8f53-45a41799e8b3" />
+
 
 ### ✅ Answer
 ```
