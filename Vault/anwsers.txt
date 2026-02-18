@@ -1,0 +1,16 @@
+q1: Miriam Graham
+q2:MiriamG@bank.onmicrosoft.com
+q3:member
+q4:PrimaryRefreshToken
+q5:no
+q6:12az1234-04by-4e50-1e11-c00ae123d0bd
+q7:Finance
+q8:2
+q9:14
+q10:Microsoft Azure CLI
+q11:azsdk-python-keyvault-keys/4.9.0b3 Python/3.11.5 (Windows-10.0.19044-SP0)
+Q12:SALARY
+q13:Payroll
+q14:Confidential
+q15:KeyList
+q16:Microsoft Azure Powershell
