@@ -1,0 +1,30 @@
+BTLO - Fingerprint Investigation - Answers
+============================================
+
+Q1) Attacker IP that scanned TCP ports:
+192.168.1.16
+(NOTE: not directly confirmed via a SYN-scan packet pattern in this session - verify with
+filter: tcp.flags.syn==1 && tcp.flags.ack==0 before final submission)
+
+Q2) First file uploaded:
+shell.php
+
+Q3) First command executed by the attacker:
+touch test.txt
+
+Q4) Second file uploaded by the attacker:
+shell2.php
+
+Q5) Port used for the reverse shell:
+1234
+
+Q6) C2 URL where the malware is hosted:
+http://192.168.1.6:8965/myapp
+
+Q7) Location where the command is executed:
+/tmp
+
+Q8) JA3 fingerprint of the malware traffic:
+4264590bacd8b2accb2021b7adb3b98e
+(NOTE: computed manually from extracted ClientHello fields - dpkt/ja3.py unavailable offline.
+Recommend cross-checking against ja3er.com or Wireshark's native JA3 field if available.)
