@@ -1,0 +1,6 @@
+q1:/.git/
+q2: noP@sX3211
+q3:wordpress-git-config.yaml
+q4:/wp-content/themes/.git/
+q5:rX3dea78sdummY43sZ
+q6:id_rsa
