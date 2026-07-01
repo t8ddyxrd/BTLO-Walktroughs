@@ -23,7 +23,7 @@ attacker-controlled hosts surfaced over the course of the investigation:
 ![Destinations and Ports view](Screenshots/q1part1.png)
 ![TCP Conversations view](Screenshots/q1part2.png)
 
-**Answer:** `192.168.1.16`
+**Answer:** `192.168.1.9`
 
 > ⚠️ **Note:** This answer is inferred from infrastructure overlap (same host later used for the
 > reverse shell) rather than a directly observed SYN-flood/port-sweep pattern. Before final
