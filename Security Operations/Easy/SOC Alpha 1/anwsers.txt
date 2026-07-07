@@ -1,0 +1,7 @@
+q1:Invoke-WebRequest
+q2:https://raw.githubusercontent.com/nerrorsec/SBT-SOC/main /MSWorker.exe
+q3:MSWorker.exe
+q4:service.exe
+q5:Service
+q6: My Task
+q7:"C:\Program Files\GameLoaderGen\gen.bat"
