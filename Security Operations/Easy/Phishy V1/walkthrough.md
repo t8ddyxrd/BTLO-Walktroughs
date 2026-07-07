@@ -15,7 +15,7 @@ displays a generic **"SORRY!"** default cPanel error page. This is a decoy —
 it's meant to make the domain look like an unconfigured/parked hosting
 account so it doesn't draw attention.
 
-![Initial phishing page source with collapsed elements](screenshots/q1part1.png)
+![Initial phishing page source with collapsed elements](Screenshots/q1part1.png)
 
 Viewing the page source of this default page reveals an HTML comment left
 behind by the mirroring tool:
@@ -24,7 +24,7 @@ behind by the mirroring tool:
 <!-- Mirrored from 61.221.12.26/cgi-sys/defaultwebpage.cgi by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 18 Feb 2021 12:43:50 GMT -->
 ```
 
-![HTTrack mirror comment revealing source IP and tool](screenshots/qpart2.png)
+![HTTrack mirror comment revealing source IP and tool](Screenshots/qpart2.png)
 
 **Answer:** `61.221.12.26/cgi-sys/defaultwebpage.cgi, HTTrack`
 
@@ -45,7 +45,7 @@ distinct from the `securedocument.net/cgi-sys` decoy) shows a linked
 stylesheet, `style.css`. Inside that stylesheet is the background image
 declaration:
 
-![style.css showing the background image reference](screenshots/q2.png)
+![style.css showing the background image reference](Screenshots/q2.png)
 
 ```css
 body {
@@ -73,7 +73,7 @@ This is also confirmed in the browser's Network tab — after submitting the
 form, `jeff.php` is shown as the initiator of the follow-up request to
 `www.office.com`:
 
-![Network tab showing jeff.php as initiator and the office.com request](screenshots/q3and7.png)
+![Network tab showing jeff.php as initiator and the office.com request](Screenshots/q3and7.png)
 
 **Answer:** `jeff.php`
 
@@ -84,7 +84,7 @@ form, `jeff.php` is shown as the initiator of the follow-up request to
 The phishing kit archive `0ff1cePh1sh.zip` was found sitting in a directory
 listing at `/secure/`:
 
-![Directory listing showing 0ff1cePh1sh.zip and LOGIN folder](screenshots/q4part1.png)
+![Directory listing showing 0ff1cePh1sh.zip and LOGIN folder](Screenshots/q4part1.png)
 
 Hashing it on the Linux CLI:
 
@@ -93,7 +93,7 @@ $ sha256sum 0ff1cePh1sh.zip
 c778236f4a731411ab2f8494eb5229309713cc7ead44922b4f496a2032fa5b48  0ff1cePh1sh.zip
 ```
 
-![Terminal output of sha256sum on the phishing kit zip](screenshots/q4part2.png)
+![Terminal output of sha256sum on the phishing kit zip](Screenshots/q4part2.png)
 
 **Answer:** `fa5b48`
 
@@ -107,7 +107,7 @@ Inside `jeff.php`, the recipient variable is set directly:
 $recipient = "boris.smets@tfl-uk.co";
 ```
 
-![jeff.php recipient variable](screenshots/q5.png)
+![jeff.php recipient variable](Screenshots/q5.png)
 
 **Answer:** `boris.smets@tfl-uk.co`
 
@@ -124,7 +124,7 @@ window.location='index1.html?'+new Date().getTime();
 </script>
 ```
 
-![View-source showing the getTime() redirect script](screenshots/q6.png)
+![View-source showing the getTime() redirect script](Screenshots/q6.png)
 
 This value (a timestamp) becomes the `$datamasii` variable referenced back
 in `jeff.php`.
@@ -144,9 +144,9 @@ $result = "office";
 window.location='https://www.office.com';
 ```
 
-![Full view-source of index1.html phishing form](screenshots/q7part1.png)
+![Full view-source of index1.html phishing form](Screenshots/q7part1.png)
 
-![Full view-source of jeff.php processing script](screenshots/q7part2.png)
+![Full view-source of jeff.php processing script](Screenshots/q7part2.png)
 
 Confirmed in the browser Network tab as well (see Q3 screenshot above) —
 after submission, a GET request goes out to `www.office.com`.
