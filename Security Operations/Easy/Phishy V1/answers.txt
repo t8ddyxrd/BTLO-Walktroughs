@@ -1,0 +1,31 @@
+BTLO INVESTIGATION - PHISHY V1
+Answers Submission
+===============================
+
+Q1. The HTML page used on securedocument.net is a decoy. Where was this webpage
+mirrored from, and what tool was used? (Use the first part of the tool name only)
+ANSWER: 61.221.12.26/cgi-sys/defaultwebpage.cgi, HTTrack
+
+Q2. What is the full URL of the background image which is on the phishing landing page?
+ANSWER: http://securedocument.net/secure/L0GIN/protected/login/portal/axCBhIt.png
+
+Q3. What is the name of the php page which will process the stolen credentials?
+ANSWER: jeff.php
+
+Q4. What is the SHA256 of the phishing kit in ZIP format? (Provide the last 6 characters)
+ANSWER: fa5b48
+(Full hash: c778236f4a731411ab2f8494eb5229309713cc7ead44922b4f496a2032fa5b48)
+
+Q5. What email address is setup to receive the phishing credential logs?
+ANSWER: boris.smets@tfl-uk.co
+
+Q6. What is the function called to produce the PHP variable which appears in the index1.html URL?
+ANSWER: getTime()
+
+Q7. What is the domain of the website which should appear once credentials are entered?
+ANSWER: office.com
+
+Q8. There is an error in this phishing kit. What variable name is wrong causing the
+phishing site to break? (Enter any of 4 potential answers)
+ANSWER: pass1
+(Other accepted answers: userrr, user1, passss)
