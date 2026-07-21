@@ -1,0 +1,78 @@
+INVESTIGATION SUBMISSION - ANSWER KEY
+Case: SQLi -> presigned-URL exfiltration of CCTV footage (MinIO / zombiebucket)
+Evidence source: Arkime v4.7.0 full packet capture, timezone set to UTC
+Activity window: 2025-09-24 01:09:55 - 01:17:38 UTC
+Total: 50 points
+
+------------------------------------------------------------
+Q1. What source IP address did the attacker use, and which
+    application port was actively targeted? (5 pts)
+
+    91.90.124.21, port 3000
+
+------------------------------------------------------------
+Q2. What is the MD5 checksum of the HTTP body returned by the
+    home page? (5 pts)
+
+    ca1d882d9b1aac5f04f39509ee17f001
+
+------------------------------------------------------------
+Q3. Which HTTP path did the attacker call to enumerate stored
+    objects? (5 pts)
+
+    /search
+
+------------------------------------------------------------
+Q4. What SQL injection payload was used to enumerate the object
+    records? (5 pts)
+
+    a' OR '1'='1
+    (on the wire: /search?q=a'%20OR%20'1'%3D'1)
+
+------------------------------------------------------------
+Q5. Which account name was set as the owner in the uploaded
+    files' metadata? (5 pts)
+
+    Frankenstein_Code
+
+------------------------------------------------------------
+Q6. Which filename metadata corresponds to the camera of
+    interest (the file the attacker exfiltrated)? (5 pts)
+
+    cam06_ai_monitor_securityincident.mp4
+
+------------------------------------------------------------
+Q7. What is the exact S3 object key that was downloaded by the
+    attacker? (5 pts)
+
+    uploads/525e1f476a399b2675777f6c2993aba1_cam06_ai_monitor_securityincident.mp4
+
+------------------------------------------------------------
+Q8. Which path and ID did the attacker call to obtain the
+    presigned download URL? (5 pts)
+
+    /download , id = 6
+    (full request: GET /download?id=6)
+
+------------------------------------------------------------
+Q9. What User-Agent string did the attacker present when
+    retrieving the file? (2 pts)
+
+    Mozilla/5.0 (Windows NT; Windows NT 10.0; en-CA) WindowsPowerShell/5.1.26100.6584
+
+------------------------------------------------------------
+Q10. Based on the network evidence, what host:port did the
+     attacker ultimately reach in order to retrieve the object
+     from the storage service? (3 pts)
+
+     minio:9000
+
+------------------------------------------------------------
+Q11. After downloading and watching the video, what credentials
+     are visible in the recording? (5 pts)
+
+     Username: operator39
+     Password: halloween2025
+
+------------------------------------------------------------
+END OF ANSWERS
